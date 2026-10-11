@@ -1,0 +1,28 @@
+# Cấu hình mặc định. Nhãn: [CỐ ĐỊNH] theo thiết kế | [KHỞI TẠO] cần hiệu chỉnh | [ĐO] phải đo thực tế.
+# Giá trị null = chưa biết, phải điền sau khi xác minh/đo.
+
+# --- LLM (cổng G-LLM: để tắt cho đến khi qua mọi bước kiểm tra) ---
+llm_enabled: false          # [CỐ ĐỊNH] mặc định tắt
+llm_backend: gemini         # gemini | ollama | scripted (chọn sau cổng G-LLM)
+llm_timeout_s: null         # [KHỞI TẠO] đặt sau smoke test
+llm_rpm: null               # [ĐO] đọc trong AI Studio — CHƯA XÁC MINH
+max_llm_calls_per_day: null # [ĐO] <= 80% RPD — CHƯA XÁC MINH
+max_agent_steps: 5          # [CỐ ĐỊNH] chốt an toàn
+
+# --- Embedding & cache ---
+embedding_model: paraphrase-multilingual-MiniLM-L12-v2  # [KHỞI TẠO] hỗ trợ tiếng Việt: CHƯA XÁC MINH
+tau: 0.90                   # [KHỞI TẠO] chỉ để chạy thử; chốt bằng quét ngưỡng trên tập hiệu chỉnh
+ttl_weather_hours: 3        # [KHỞI TẠO] đo độ lệch dự báo để chỉnh
+ttl_static_days: 7          # [CỐ ĐỊNH] không có căn cứ đo; ghi là giả định
+
+# --- RAG & tool ---
+top_k: 8                    # [KHỞI TẠO] chỉnh theo Recall@k
+tool_timeout_s: 5           # [KHỞI TẠO] chỉnh theo độ trễ quan sát
+rain_threshold_pct: 60      # [CỐ ĐỊNH] lựa chọn của nhóm, không có căn cứ đo
+forecast_horizon_days: 7    # [KHỞI TẠO] CHƯA XÁC MINH — đọc tài liệu Open-Meteo
+route_circuity: 1.3         # [KHỞI TẠO] hệ số đường quanh co cho ước tính Haversine
+route_speed_kmh: 25         # [KHỞI TẠO] tốc độ trung bình cho ước tính Haversine
+
+# --- Chung ---
+timezone: Asia/Ho_Chi_Minh
+random_seed: 42             # [CỐ ĐỊNH]

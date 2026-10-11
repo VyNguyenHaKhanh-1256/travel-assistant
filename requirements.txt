@@ -1,0 +1,12 @@
+# Mốc M0: chỉ những gói cần ngay bây giờ.
+# Cài bằng:  python -m pip install -r requirements.txt
+PyYAML>=6.0          # đọc file config/default.yaml
+python-dotenv>=1.0   # đọc khóa API từ file .env (sau này)
+pytest>=8.0          # chạy kiểm thử
+
+# Các gói dưới đây CHƯA cài ở M0. Sẽ thêm đúng vào mốc cần dùng:
+#   M0 (bước embedding): sentence-transformers   (kéo theo PyTorch, dung lượng lớn)
+#   M2: chromadb
+#   M5: SDK Gemini hoặc client Ollama (tùy cổng G-LLM)
+#   M6: streamlit
+#   Phân tích kết quả: pandas
