@@ -1,0 +1,18 @@
+# Bí mật
+.env
+
+# Môi trường Python và bộ nhớ đệm
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Dữ liệu sinh ra khi chạy
+chroma_db/
+logs/
+
+# Hệ điều hành / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
